@@ -4,22 +4,20 @@ from user import Credential
 class TestUser(unittest.TestCase):
     '''
     test class that defines test cases for the user class
-    Args:
-        unittest,TestCase: TestCase class that helps in creating test
     '''
     def setUp(self):
         '''
         set up method of test case
         '''
-        self.new_user=User("Deborah","Debby07","Ingabineza","ingabineza@gmail.com")
+        self.new_user=User("Claudine","Clauma","123456","clauma@gmail.com")
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
-        self.assertEqual(self.new_user.first_name,"Deborah")
-        self.assertEqual(self.new_user.username,"Debby07")
-        self.assertEqual(self.new_user.password,"Ingabineza")
-        self.assertEqual(self.new_user.email,"ingabineza@gmail.com")
+        self.assertEqual(self.new_user.first_name,"Claudine")
+        self.assertEqual(self.new_user.username,"Clauma")
+        self.assertEqual(self.new_user.password,"123456")
+        self.assertEqual(self.new_user.email,"clauma@gmail.com")
     def test_save_user(self):
         '''
         to test if the user object information is saved into a list
@@ -68,11 +66,10 @@ class TestCredentials(unittest.TestCase):
         '''
         methode to check if our user login work
         '''
-        self.new_user=User("Deborah","Debby07","Ingabineza","ingabineza@gmail.com")
+        self.new_user=User("Claudine","Clauma","123456","clauma@gmail.com")
         self.new_user.save_user()
-        userOne=User("Deborah","Debby07","Ingabineza","ingabineza@gmail.com")
+        userOne=User("Claudine","Clauma","123456","clauma@gmail.com")
         userOne.save_user()
-        # current_user=''
         for user in User.user_list:
             if user.first_name == userOne.first_name and user.password==userOne.password:
                 current_user=user.first_name
@@ -82,21 +79,21 @@ class TestCredentials(unittest.TestCase):
         '''
         set up method of test case
         '''
-        self.new_credential=Credential("Deborah","facebook","Debby07","Ingabineza")
+        self.new_credential=Credential("mahoro","instagram","mah_oro","00000")
     def test__init(self):
         '''
         test_init test case to test if the object is initialized properly for credential
         '''
-        self.assertEqual(self.new_credential.first_name,'Deborah')
-        self.assertEqual(self.new_credential.site_name,"facebook")
-        self.assertEqual(self.new_credential.account_name,"Debby07")
-        self.assertEqual(self.new_credential.password,"Ingabineza")
+        self.assertEqual(self.new_credential.first_name,'mahoro')
+        self.assertEqual(self.new_credential.platform_name,"instagram")
+        self.assertEqual(self.new_credential.account_name,"mah_oro")
+        self.assertEqual(self.new_credential.password,"00000")
     def test_save_credentials(self):
         '''
         method which test to save credential
         '''
         self.new_credential.save_credential()
-        twitter=Credential("Deborah","Twitter","Debby07","Ingabineza")
+        twitter=Credential("coco","Twitter","coco12","33333")
         twitter.save_credential()
         self.assertEqual(len(Credential.credential_list),2)
     def tearDown(self):
@@ -110,18 +107,18 @@ class TestCredentials(unittest.TestCase):
         method to check if display works
         '''
         self.new_credential.save_credential()
-        twitter=Credential("Deborah","facebook","Debby07","Ingabineza")
+        twitter=Credential("coco","Twitter","coco12","33333")
         twitter.save_credential()
-        gmail=Credential("Deborah","gmail","Debby07","Ingabineza")
+        gmail=Credential("Claudine","gmail","Clauma","123456")
         gmail.save_credential()
-        instagram=Credential("Deborah","instagram","Debby07","Ingabineza")
+        instagram=Credential("mahoro","instagram","mah_oro","00000")
         self.assertEqual(len(Credential.disp_credential(twitter.first_name)),3)
     def test_find_site(self):
         '''
         Methode to find by site name and retun the correct credentials
         '''
         self.new_credential.save_credential()
-        twitter=Credential("Deborah","Twitter","Debby07","Ingabineza")
+        twitter=Credential("coco","Twitter","coco12","33333")
         twitter.save_credential()
         credential_exists=Credential.find_site('Twitter')
         self.assertEqual(credential_exists,twitter)
