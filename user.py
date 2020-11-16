@@ -23,13 +23,9 @@ class User:
         '''
         return cls.user_list
     @classmethod
-    def user_exist(cls,first_name):
+    def user_exist(cls,first_name): #method for checking the existing user
         '''
         method that find by username and return all information that matches
-        Args:
-            name: first name to search for
-        Returns:
-            all information of that person
         '''
         for user in cls.user_list:
             if user.first_name== first_name:
