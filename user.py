@@ -40,7 +40,7 @@ class User:
         for user in cls.user_list:
             if user.first_name==first_name:
                 return user
-    def __init__(self,first_name,username,password,email):
+    def __init__(self,first_name,username,password,email): #initializing the user object
         self.first_name=first_name
         self.username=username
         self.password=password
