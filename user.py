@@ -51,12 +51,12 @@ class Credential:
     '''
     credential_list=[]
     user_credential_list=[]
-    def __init__(self,first_name,site_name,account_name,password):
+    def __init__(self,first_name,platform_name,account_name,password):
         '''
         Methode show the properties of user object
         '''
         self.first_name=first_name
-        self.site_name=site_name
+        self.platform_name=platform_name
         self.account_name=account_name
         self.password=password
     def save_credential(self):
@@ -91,10 +91,10 @@ class Credential:
                 user_credential_list.append(credential)
         return user_credential_list
     @classmethod
-    def find_site(cls,site_name):
+    def find_site(cls,platform_name):
         '''
         Methode that find by site name and return credentials that match
         '''
         for credential in cls.credential_list:
-            if credential.site_name==site_name:
+            if credential.platform_name==platform_name:
                 return credential
