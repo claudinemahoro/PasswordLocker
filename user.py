@@ -32,13 +32,10 @@ class User:
                 return True
         return False
     @classmethod
-    def find_by_name(cls,first_name):
+    def find_by_name(cls,first_name):#method for searching a credential saved
         '''
-        method that find by username and return all information that matches
-        Args:
-            name: first name to search for
-        Returns:
-            all information of that person
+        method that find credentials by username and return all information that matches
+        
         '''
         for user in cls.user_list:
             if user.first_name==first_name:
