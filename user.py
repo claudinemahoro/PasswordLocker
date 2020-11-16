@@ -80,8 +80,8 @@ class Credential:
             if(user.first_name== first_name and user.password==password):
                 current_user=user.first_name
         return current_user
-    @classmethod
-    def disp_credential(cls,first_name):
+    @classmethod 
+    def disp_credential(cls,first_name): #method for displaying thesaved credentials
         '''
         method to display all list of saved credentials
         '''
