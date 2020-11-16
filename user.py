@@ -5,7 +5,7 @@ class User:
     """
     class that generates a new instance of a user
     """
-    user_list=[] #empty user list
+    user_list=[] 
     def save_user(self):
         '''
         save user method saves user objects into user list
