@@ -17,7 +17,7 @@ class User:
         '''
         User.user_list.remove(self)
     @classmethod
-    def display_users(cls):
+    def display_users(cls): #method for deleting the saved user
         '''
         method that display all user saved in the list
         '''
