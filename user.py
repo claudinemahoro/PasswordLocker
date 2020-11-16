@@ -71,9 +71,9 @@ class Credential:
         generate=''.join(random.choice(char) for _ in range(size) )
         return generate
     @classmethod
-    def check_user(cls,first_name,password):
+    def check_user(cls,first_name,password):#method for password verification
         '''
-        Method that checks if name and password enteries match
+        Method that checks if name and password entered match
         '''
         current_user=''
         for user in User.user_list:
