@@ -64,7 +64,7 @@ class Credential:
         methode to save credential globally
         '''
         Credential.credential_list.append(self)
-    def generate_password(size=6, char=string.ascii_lowercase + string.ascii_uppercase+string.digits):
+    def generate_password(size=6, char=string.ascii_lowercase + string.ascii_uppercase+string.digits):#method to generate random password
         '''
         method to generate random password
         '''
